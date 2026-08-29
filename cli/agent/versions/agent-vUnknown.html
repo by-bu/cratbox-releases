@@ -3,44 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Release agent-vUnknown | Cratbox Agent</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
             background-color: #f8fafc;
         }
+        .hero-banner {
+            background-color: #020617;
+        }
+        .accent-text {
+            color: #818cf8;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
+    <title>Release agent-vUnknown | Cratbox Dev Agent</title>
+    <meta name="description" content="Release notes, downloads, and changelog for Dev Agent agent-vUnknown.">
 </head>
 <body class="min-h-screen text-slate-900 antialiased selection:bg-indigo-500/30">
-    
-    <!-- Top Navigation bar -->
-    <div class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href="/cli/agent/" class="text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-1 font-medium">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    Back to History
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📦</span>
+                <span class="font-bold text-slate-900 text-lg tracking-tight">Cratbox <span class="text-slate-400 font-normal">Releases</span></span>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="/" class="text-slate-600 hover:text-slate-900 transition-colors text-sm">Home</a>
+                <a href="/cli/" class="text-indigo-600 font-semibold transition-colors text-sm">CLI Tools</a>
+                <a href="/agents/" class="text-slate-600 hover:text-slate-900 transition-colors text-sm">Agents</a>
+                <a href="https://cratbox.com" target="_blank" class="text-slate-400 hover:text-slate-600 transition-colors text-sm flex items-center gap-1">
+                    cratbox.com <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
-            <div class="font-bold text-slate-900">
-                Cratbox Agent
-            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-center gap-2 text-sm mb-8"><a href="/" class="text-slate-500 hover:text-indigo-600 transition-colors">Home</a><span class="text-slate-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span><a href="/cli/" class="text-slate-500 hover:text-indigo-600 transition-colors">CLI Tools</a><span class="text-slate-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span><a href="/cli/agent/" class="text-slate-500 hover:text-indigo-600 transition-colors">Dev Agent</a><span class="text-slate-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span><span class="text-slate-900 font-medium">agent-vUnknown</span></div>
+
         <!-- Version Header -->
         <div class="mb-10">
             <div class="flex items-center mb-2">
                 <h1 class="text-4xl font-bold text-slate-900 tracking-tight">agent-vUnknown</h1>
-                <span class="ml-3 px-2.5 py-0.5 text-xs font-semibold bg-indigo-100 text-indigo-700 rounded-full border border-indigo-200">Latest Release</span>
+                
             </div>
             <p class="text-slate-500 flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                Released on 2026-08-26
+                Released on 2026-08-29
             </p>
         </div>
 
@@ -50,7 +74,7 @@
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div class="px-6 py-5 border-b border-slate-200 bg-slate-50">
                         <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <span class="text-indigo-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></span>
                             Release Notes
                         </h3>
                     </div>
@@ -65,7 +89,7 @@
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div class="px-6 py-5 border-b border-slate-200 bg-slate-50">
                         <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            <span class="text-emerald-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg></span>
                             Downloads
                         </h3>
                     </div>
@@ -103,11 +127,24 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="mt-16 text-center text-slate-500 text-sm font-medium">
-            <p>&copy; 2026 Cratbox. Automatically generated by GitHub Actions.</p>
-        </div>
     </div>
+
+    <footer class="border-t border-slate-200 mt-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">📦</span>
+                    <span class="font-bold text-slate-900">Cratbox</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-slate-500">
+                    <a href="/" class="hover:text-slate-900 transition-colors">Releases</a>
+                    <a href="/cli/" class="hover:text-slate-900 transition-colors">CLI Tools</a>
+                    <a href="https://cratbox.com" target="_blank" class="hover:text-slate-900 transition-colors">Website</a>
+                    <a href="https://docs.cratbox.com" target="_blank" class="hover:text-slate-900 transition-colors">Docs</a>
+                </div>
+                <p class="text-sm text-slate-400">&copy; 2026 Cratbox. Auto-generated by CI.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
