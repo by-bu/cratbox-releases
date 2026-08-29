@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cratbox Client | Releases</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
@@ -13,51 +13,76 @@
         }
         .hero-banner {
             background-color: #020617;
-            position: relative;
-            overflow: hidden;
         }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, transparent 0%, #020617 100%);
+        .accent-text {
+            color: #818cf8;
         }
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #818cf8, #c084fc);
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
+    <title>CLI Client | Cratbox Releases</title>
+    <meta name="description" content="Download and manage CLI Client releases. View version history, changelogs, and download statically linked binaries.">
 </head>
 <body class="min-h-screen text-slate-900 antialiased selection:bg-indigo-500/30">
-    
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📦</span>
+                <span class="font-bold text-slate-900 text-lg tracking-tight">Cratbox <span class="text-slate-400 font-normal">Releases</span></span>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="/" class="text-slate-600 hover:text-slate-900 transition-colors text-sm">Home</a>
+                <a href="/cli/" class="text-indigo-600 font-semibold transition-colors text-sm">CLI Tools</a>
+                <a href="/agents/" class="text-slate-600 hover:text-slate-900 transition-colors text-sm">Agents</a>
+                <a href="https://cratbox.com" target="_blank" class="text-slate-400 hover:text-slate-600 transition-colors text-sm flex items-center gap-1">
+                    cratbox.com <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <div class="hero-banner w-full text-white py-24 sm:py-32">
-        <div class="hero-overlay"></div>
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+    <div class="hero-banner w-full text-white">
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 text-center space-y-5">
             <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-                Cratbox <span class="gradient-text">Client</span>
+                Cratbox <span class="accent-text">CLI Client</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
-                Official distribution mirror for Cratbox Client. Download statically linked binaries for your architecture.
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                Interactive command-line client for managing projects, tunnels, and deployments from your terminal.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center">
-                <a href="/cli/client/versions/client-vUnknown.html" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 rounded-lg hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl font-semibold flex items-center justify-center group">
-                    Latest Release (client-vUnknown)
-                    <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="/cli/client/versions/master.html" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 rounded-xl hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl font-semibold flex items-center justify-center gap-2 group">
+                    Latest Release (master)
+                    <span class="group-hover:translate-x-1 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Content Section -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-center gap-2 text-sm mb-8"><a href="/" class="text-slate-500 hover:text-indigo-600 transition-colors">Home</a><span class="text-slate-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span><a href="/cli/" class="text-slate-500 hover:text-indigo-600 transition-colors">CLI Tools</a><span class="text-slate-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span><span class="text-slate-900 font-medium">CLI Client</span></div>
+
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="px-6 py-5 border-b border-slate-200 bg-white">
-                <h3 class="text-xl font-bold text-slate-900">Deployment History</h3>
-                <p class="text-sm text-slate-500 mt-1">View past releases, changelogs, and download previous Client versions.</p>
+            <div class="px-6 py-5 border-b border-slate-200 bg-white flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Version History</h3>
+                    <p class="text-sm text-slate-500 mt-1">Browse past releases, changelogs, and download previous versions.</p>
+                </div>
+                <span class="text-sm text-slate-400 font-medium">1 release</span>
             </div>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-slate-200">
@@ -70,32 +95,52 @@
                     </thead>
                     <tbody class="divide-y divide-slate-100 bg-white">
                         
-        <tr class="bg-white hover:bg-slate-100 transition-colors border-b border-slate-100 cursor-pointer" onclick="window.location.href='/cli/client/versions/client-vUnknown.html'">
+        <tr class="bg-white hover:bg-indigo-50/50 transition-colors border-b border-slate-100 cursor-pointer" onclick="window.location.href='/cli/client/versions/client-vUnknown.html'">
             <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                     <span class="text-sm font-medium text-slate-900">client-vUnknown</span>
-                    <span class="ml-3 px-2.5 py-0.5 text-xs font-semibold bg-indigo-100 text-indigo-700 rounded-full border border-indigo-200">Latest</span>
+                    
                 </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
-                2026-08-26
-            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">2026-08-29</td>
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <a href="/cli/client/versions/client-vUnknown.html" class="text-indigo-600 hover:text-indigo-900 transition-colors flex items-center gap-1">
                     View Release <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </a>
             </td>
         </tr>
-        
                     </tbody>
                 </table>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="mt-16 text-center text-slate-500 text-sm font-medium">
-            <p>&copy; 2026 Cratbox. Automatically generated by GitHub Actions.</p>
+
+        <!-- Quick Install -->
+        <div class="mt-8 bg-slate-900 rounded-2xl p-6 md:p-8 overflow-hidden">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Quick Install (x86_64)</h3>
+                <div class="bg-black/30 rounded-xl p-4 font-mono text-xs text-emerald-400 overflow-x-auto border border-white/5 mt-3">
+                    <code>curl -fsSL https://releases.cratbox.com/cli/client/cratbox-client-linux-x86_64 -o cratbox-client && chmod +x cratbox-client</code>
+                </div>
+            </div>
         </div>
     </div>
+
+    <footer class="border-t border-slate-200 mt-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">📦</span>
+                    <span class="font-bold text-slate-900">Cratbox</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-slate-500">
+                    <a href="/" class="hover:text-slate-900 transition-colors">Releases</a>
+                    <a href="/cli/" class="hover:text-slate-900 transition-colors">CLI Tools</a>
+                    <a href="https://cratbox.com" target="_blank" class="hover:text-slate-900 transition-colors">Website</a>
+                    <a href="https://docs.cratbox.com" target="_blank" class="hover:text-slate-900 transition-colors">Docs</a>
+                </div>
+                <p class="text-sm text-slate-400">&copy; 2026 Cratbox. Auto-generated by CI.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
