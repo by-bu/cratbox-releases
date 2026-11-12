@@ -2,17 +2,6 @@
   "schema": 1,
   "tools": [
     {
-      "name": "client",
-      "title": "CLI Client",
-      "binary_name": "cratbox-client",
-      "latest": "0.1.0",
-      "versions": [
-        "0.1.0"
-      ],
-      "manifest": "/cli/client/manifest.json",
-      "page": "/cli/client/"
-    },
-    {
       "name": "server",
       "title": "Deploy Server",
       "binary_name": "cratbox-deploy",
@@ -22,6 +11,17 @@
       ],
       "manifest": "/cli/server/manifest.json",
       "page": "/cli/server/"
+    },
+    {
+      "name": "client",
+      "title": "CLI Client",
+      "binary_name": "cratbox-client",
+      "latest": "0.1.0",
+      "versions": [
+        "0.1.0"
+      ],
+      "manifest": "/cli/client/manifest.json",
+      "page": "/cli/client/"
     },
     {
       "name": "agent",
