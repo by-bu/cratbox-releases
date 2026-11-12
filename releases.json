@@ -2,15 +2,15 @@
   "schema": 1,
   "tools": [
     {
-      "name": "agent",
-      "title": "Dev Agent",
-      "binary_name": "cratbox-agent",
+      "name": "client",
+      "title": "CLI Client",
+      "binary_name": "cratbox-client",
       "latest": "0.1.0",
       "versions": [
         "0.1.0"
       ],
-      "manifest": "/cli/agent/manifest.json",
-      "page": "/cli/agent/"
+      "manifest": "/cli/client/manifest.json",
+      "page": "/cli/client/"
     },
     {
       "name": "server",
@@ -24,15 +24,15 @@
       "page": "/cli/server/"
     },
     {
-      "name": "client",
-      "title": "CLI Client",
-      "binary_name": "cratbox-client",
+      "name": "agent",
+      "title": "Dev Agent",
+      "binary_name": "cratbox-agent",
       "latest": "0.1.0",
       "versions": [
         "0.1.0"
       ],
-      "manifest": "/cli/client/manifest.json",
-      "page": "/cli/client/"
+      "manifest": "/cli/agent/manifest.json",
+      "page": "/cli/agent/"
     }
   ]
 }
