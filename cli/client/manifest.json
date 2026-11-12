@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "tool": "client",
+  "title": "CLI Client",
+  "description": "Interactive command-line client for managing projects, tunnels, and deployments from your terminal.",
+  "binary_name": "cratbox-client",
+  "source_repository": "by-bu/cratbox",
+  "latest": "0.1.0",
+  "versions": [
+    {
+      "version": "0.1.0",
+      "tag": "client-v0.1.0",
+      "prerelease": false,
+      "released_at": "2026-11-12T16:21:08Z",
+      "commit": "425e49b48db836c7203f9653494683b1adde852a",
+      "source": "legacy-import",
+      "files": [
+        {
+          "name": "cratbox-client-0.1.0-linux-x86_64",
+          "os": "linux",
+          "arch": "x86_64",
+          "target": "x86_64-unknown-linux-musl",
+          "url": "/cli/client/0.1.0/cratbox-client-0.1.0-linux-x86_64",
+          "size": 10180760,
+          "sha256": "41535a0b3b0e0eba176d865caf2cdb6072b31570dafc52d87a6e6997926e0652"
+        },
+        {
+          "name": "cratbox-client-0.1.0-linux-aarch64",
+          "os": "linux",
+          "arch": "aarch64",
+          "target": "aarch64-unknown-linux-musl",
+          "url": "/cli/client/0.1.0/cratbox-client-0.1.0-linux-aarch64",
+          "size": 9011400,
+          "sha256": "000b2b7baed1f5776fea224770e927587601228ecb07e8c92e954da4130f64a1"
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

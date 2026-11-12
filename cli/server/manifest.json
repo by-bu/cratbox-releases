@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "tool": "server",
+  "title": "Deploy Server",
+  "description": "Production-grade deployment agent for your VPS. Manages containers, rollbacks, and zero-downtime deploys.",
+  "binary_name": "cratbox-deploy",
+  "source_repository": "by-bu/cratbox",
+  "latest": "0.2.0",
+  "versions": [
+    {
+      "version": "0.2.0",
+      "tag": "server-v0.2.0",
+      "prerelease": false,
+      "released_at": "2026-11-12T16:21:55Z",
+      "commit": "425e49b48db836c7203f9653494683b1adde852a",
+      "source": "legacy-import",
+      "files": [
+        {
+          "name": "cratbox-deploy-0.2.0-linux-x86_64",
+          "os": "linux",
+          "arch": "x86_64",
+          "target": "x86_64-unknown-linux-musl",
+          "url": "/cli/server/0.2.0/cratbox-deploy-0.2.0-linux-x86_64",
+          "size": 3679560,
+          "sha256": "026ba75f527f2caadc628802080307b82edf747578ccaacc0506e3abcee74059"
+        },
+        {
+          "name": "cratbox-deploy-0.2.0-linux-aarch64",
+          "os": "linux",
+          "arch": "aarch64",
+          "target": "aarch64-unknown-linux-musl",
+          "url": "/cli/server/0.2.0/cratbox-deploy-0.2.0-linux-aarch64",
+          "size": 3019552,
+          "sha256": "dc968bc9b3b335c25612c94f5464b58b1e52fd4b5fdfa241e1dc4973a177b13d"
+        }
+      ],
+      "notes": "### Added\n- Initial setup for the deployment agent CLI.\n- Multi-architecture static builds for Linux (`x86_64` and `aarch64`).\n- Support for secure agent connections to the control plane.\n- Domain routes can be applied on request (`DomainSyncRequest`), without a deployment; advertised as the `domain_sync` capability.\n\n- Security scans on request (`SecurityScanRequest`): app images and source with Trivy (from the host or its container image), and a read-only host audit. Capabilities `security_scan`, `host_audit`.\n- Edge protection per domain from the platform's policy: firewall (Coraza + OWASP CRS, detect or block), per-visitor rate limit, IP allow/deny lists and security headers. Capabilities `waf` and `rate_limit` reflect the proxy's modules; missing ones are skipped and reported.\n- Firewall detections and blocks are forwarded to the platform (`SecurityEvents`).\n- `EdgeSetupRequest` installs or upgrades Caddy with the firewall and rate-limit modules (capability `edge_setup`).\n- Deploy scan gate: built images are scanned before release and the deployment stops on findings at or above the policy's level.\n\n- `ToolchainSetupRequest` installs what a deployment needs (Git, Docker, Compose, Swarm mode, k3s, Terraform, Nixpacks, pack, Caddy, Trivy), reporting after each tool. Capability `toolchain_setup`; `trivy` is now reported when installed.\n- `ContainerActionRequest` deletes one container (capability `container_manage`).\n- A platform message this build cannot read is answered with `UnsupportedMessage` instead of being dropped.\n- The CLI version must equal `deploy_manifest::capability::AGENT_RELEASE`.\n\n### Fixed\n- A Docker Swarm deployment on a server without swarm mode is refused with a clear message. The check matched \"inactive\" as active, so the deployment went ahead and failed later.\n\n### Changed\n- Domain routing is reconciled per app: routes of removed domains are deleted, including after a deployment with no domains and when an app is removed.\n- A domain whose target does not publish its port is skipped and reported instead of being routed to a guessed port."
+    }
+  ]
+}

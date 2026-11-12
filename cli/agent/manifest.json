@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "tool": "agent",
+  "title": "Dev Agent",
+  "description": "Lightweight daemon that runs on your development machine for live tunnels, log streaming, and remote access.",
+  "binary_name": "cratbox-agent",
+  "source_repository": "by-bu/cratbox",
+  "latest": "0.1.0",
+  "versions": [
+    {
+      "version": "0.1.0",
+      "tag": "agent-v0.1.0",
+      "prerelease": false,
+      "released_at": "2026-11-12T16:20:16Z",
+      "commit": "425e49b48db836c7203f9653494683b1adde852a",
+      "source": "legacy-import",
+      "files": [
+        {
+          "name": "cratbox-agent-0.1.0-linux-x86_64",
+          "os": "linux",
+          "arch": "x86_64",
+          "target": "x86_64-unknown-linux-musl",
+          "url": "/cli/agent/0.1.0/cratbox-agent-0.1.0-linux-x86_64",
+          "size": 5566736,
+          "sha256": "5f9e7c659b4d97f2b7d6d41ca4df35cb3a03306fb5812e30a76cb3e6afa4f5c5"
+        },
+        {
+          "name": "cratbox-agent-0.1.0-linux-aarch64",
+          "os": "linux",
+          "arch": "aarch64",
+          "target": "aarch64-unknown-linux-musl",
+          "url": "/cli/agent/0.1.0/cratbox-agent-0.1.0-linux-aarch64",
+          "size": 5413184,
+          "sha256": "72f3deeef4fc390a977cc39c8c0b7e1fefe8b7a54ebd115df29ae2c161c7ea28"
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}
